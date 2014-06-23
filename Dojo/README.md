@@ -32,7 +32,9 @@ Correct answer should be `94.4%`. There are 500 images in `validationsample.csv`
 
 For non-parallel solutions, Java is the fastest. Then Rust, followed by Go.
 
-For all solutions (including parallel solutions), Rust is the fastest. Then Java, followed by Go.
+For all solutions (including parallel solutions), C is the fastest by large margin. Then Rust. Then Go. Then Java.
+
+But it's all meaningless because node.js will beat them all once written.
 
 # pseudo code
 
