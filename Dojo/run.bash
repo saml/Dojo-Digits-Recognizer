@@ -30,7 +30,7 @@ rustc -O knn.rs -o knn
 echo "----"
 
 echo "Go multi"
-go build knn.go -o knn
+go build knn.go
 ./knn
 echo "----"
 

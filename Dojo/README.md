@@ -30,40 +30,6 @@ Correct answer should be `94.4%`. There are 500 images in `validationsample.csv`
 
 # Summary
 
-    $ ./run.bash 
-    C single
-    Compiling for 1 thread(s).
-    gcc knn.c -DNUM_THREADS=1 -pthread -O3 -std=c99 -Wall -pedantic -o knn
-    matched: 472/500 : 94.4%
-    time:    0.910000s
-    ----
-    C multi
-    Compiling for 6 thread(s).
-    gcc knn.c -DNUM_THREADS=6 -pthread -O3 -std=c99 -Wall -pedantic -o knn
-    matched: 472/500 : 94.4%
-    time:    0.163000s
-    ----
-    Java single
-    94.4% Took: 1.5390 secs
-    ----
-    Rust single
-    Percentage correct: 94.4% Took: 3.707468
-    ----
-    Rust multi
-    Percentage correct: 94.4% Took: 0.734235
-    ----
-    Go multi
-    named files must be .go files
-    Percentage correct: 94.4% Took: 0.732868
-    ----
-    Python single numpy (lapack)
-    94.4
-    elapsed time: 5.43683695793
-    ----
-    Python multi
-    count: 500 match: 472
-    94.4% Took: 0:00:40.917040
-
 
 - C fast.
 - Python slow.
@@ -103,4 +69,40 @@ Correct answer should be `94.4%`. There are 500 images in `validationsample.csv`
 
 Host 'sam-HP-Z400', running Linux 3.13.0-29-generic - Cpu0: Intel 3326 MHz Cpu1: Intel 1596 MHz Cpu2: Intel 2793 MHz Cpu3: Intel 1596 MHz Cpu4: Intel 1596 MHz Cpu5: Intel 1596 MHz; Up: 4d+3:30; Users: 20; Load: 0.47; Free: [Mem: 1990/11999 Mio] [Swap: 7340/7467 Mio] [/: 48537/172755 Mio] [/media/data: 51715/99297 Mio]; Vpenis: 486.6 cm;
 
+# result
+
+    $ ./run.bash 
+    C single
+    Compiling for 1 thread(s).
+    gcc knn.c -DNUM_THREADS=1 -pthread -O3 -std=c99 -Wall -pedantic -o knn
+    matched: 472/500 : 94.4%
+    time:    0.915000s
+    ----
+    C multi
+    Compiling for 6 thread(s).
+    gcc knn.c -DNUM_THREADS=6 -pthread -O3 -std=c99 -Wall -pedantic -o knn
+    matched: 472/500 : 94.4%
+    time:    0.158000s
+    ----
+    Java single
+    94.4% Took: 1.5390 secs
+    ----
+    Rust single
+    Percentage correct: 94.4% Took: 3.709045
+    ----
+    Rust multi
+    Percentage correct: 94.4% Took: 0.726729
+    ----
+    Go multi
+    Match: 472 94.40% 
+    Duration: 737.499628ms 
+    ----
+    Python single numpy (lapack)
+    94.4
+    elapsed time: 5.44187808037
+    ----
+    Python multi
+    count: 500 match: 472
+    94.4% Took: 0:00:41.568507
+    ----
 
