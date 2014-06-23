@@ -30,11 +30,45 @@ Correct answer should be `94.4%`. There are 500 images in `validationsample.csv`
 
 # Summary
 
-For non-parallel solutions, Java is the fastest. Then Rust, followed by Go.
+    $ ./run.bash 
+    C single
+    Compiling for 1 thread(s).
+    gcc knn.c -DNUM_THREADS=1 -pthread -O3 -std=c99 -Wall -pedantic -o knn
+    matched: 472/500 : 94.4%
+    time:    0.910000s
+    ----
+    C multi
+    Compiling for 6 thread(s).
+    gcc knn.c -DNUM_THREADS=6 -pthread -O3 -std=c99 -Wall -pedantic -o knn
+    matched: 472/500 : 94.4%
+    time:    0.163000s
+    ----
+    Java single
+    94.4% Took: 1.5390 secs
+    ----
+    Rust single
+    Percentage correct: 94.4% Took: 3.707468
+    ----
+    Rust multi
+    Percentage correct: 94.4% Took: 0.734235
+    ----
+    Go multi
+    named files must be .go files
+    Percentage correct: 94.4% Took: 0.732868
+    ----
+    Python single numpy (lapack)
+    94.4
+    elapsed time: 5.43683695793
+    ----
+    Python multi
+    count: 500 match: 472
+    94.4% Took: 0:00:40.917040
 
-For all solutions (including parallel solutions), C is the fastest by large margin. Then Rust. Then Go. Then Java.
 
-But it's all meaningless because node.js will beat them all once written.
+- C fast.
+- Python slow.
+- Go and Rust similar.
+- But it's all meaningless because node.js will beat them all once written utilizing mongodb webscale power.
 
 # pseudo code
 
@@ -112,6 +146,23 @@ single thread
     Number of CPUs 6
     846.00% Took 6.71 s
     ./knn -t ../trainingsample.csv -v ../validationsample.csv -n 6  6.90s user 0.01s system 99% cpu 6.924 total
+
+multi thread
+
+    $ cd c_rcr
+    $ make threads=6
+    $ ./knn
+    matched: 472/500 : 94.4%
+    time:    0.164000s
+    
+single thread
+    
+    $ cd c_rcr
+    $ make threads=1
+    $ ./knn
+    matched: 472/500 : 94.4%
+    time:    0.913000s
+
 
 # go
 
