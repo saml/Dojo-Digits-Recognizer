@@ -42,3 +42,6 @@ echo "Python multi"
 python knn.py
 echo "----"
 
+echo "Nodejs single"
+node knn.js
+echo "----"

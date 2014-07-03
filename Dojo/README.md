@@ -76,33 +76,36 @@ Host 'sam-HP-Z400', running Linux 3.13.0-29-generic - Cpu0: Intel 3326 MHz Cpu1:
     Compiling for 1 thread(s).
     gcc knn.c -DNUM_THREADS=1 -pthread -O3 -std=c99 -Wall -pedantic -o knn
     matched: 472/500 : 94.4%
-    time:    0.915000s
+    time:    0.911000s
     ----
     C multi
     Compiling for 6 thread(s).
     gcc knn.c -DNUM_THREADS=6 -pthread -O3 -std=c99 -Wall -pedantic -o knn
     matched: 472/500 : 94.4%
-    time:    0.158000s
+    time:    0.162000s
     ----
     Java single
-    94.4% Took: 1.5390 secs
+    94.4% Took: 1.5370 secs
     ----
     Rust single
-    Percentage correct: 94.4% Took: 3.709045
+    Percentage correct: 94.4% Took: 3.74121
     ----
     Rust multi
-    Percentage correct: 94.4% Took: 0.726729
+    Percentage correct: 94.4% Took: 0.755108
     ----
     Go multi
     Match: 472 94.40% 
-    Duration: 737.499628ms 
+    Duration: 871.889491ms 
     ----
     Python single numpy (lapack)
     94.4
-    elapsed time: 5.44187808037
+    elapsed time: 1.24143314362
     ----
     Python multi
     count: 500 match: 472
-    94.4% Took: 0:00:41.568507
+    94.4% Took: 0:00:48.216030
+    ----
+    Nodejs single
+    472/500 94.4% Took: 6.679 secs.
     ----
 
